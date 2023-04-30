@@ -5,6 +5,6 @@ variable "rsg_name" {
 }
 variable "location" {
  type = string
- default = "uk south"
+ default = "uksouth"
  description = "Azure Region"
 }

@@ -35,7 +35,7 @@ jobs:
         run: sudo apt-get install terraform
       - name: Check Terraform version
         run: terraform --version      
-      - name: Terrform init
+      - name: Terraform init
         run: terraform init
-      - name: Terrform Plan
+      - name: Terraform Plan
         run: terraform plan
