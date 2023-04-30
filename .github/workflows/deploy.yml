@@ -19,8 +19,8 @@ jobs:
   install-terraform:
     runs-on: ubuntu-latest
     steps:
-      - name: pwd
-        run: pwd
+      - name: ls
+        run: ls -l
       - name: Install Terraform Pre-requisites
         run: sudo apt-get update && sudo apt-get install -y gnupg software-properties-common
       - name: Install Hashicorp GPG
