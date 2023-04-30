@@ -5,9 +5,9 @@ on:
     branches:
       - dev
 
-defaults:
-  run:
-    working-directory: ./tf
+# defaults:
+#   run:
+#     working-directory: ./tf
 
 env:
   ARM_CLIENT_ID: ${{ secrets.AZ_CLIENT_ID }}
@@ -19,6 +19,8 @@ jobs:
   install-terraform:
     runs-on: ubuntu-latest
     steps:
+      - name: pwd
+        run: pwd
       - name: Install Terraform Pre-requisites
         run: sudo apt-get update && sudo apt-get install -y gnupg software-properties-common
       - name: Install Hashicorp GPG
