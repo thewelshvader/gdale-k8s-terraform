@@ -1,0 +1,19 @@
+name: Execute Terraform Module
+
+on:
+  push:
+    branches:
+      - dev
+
+env:
+  ARM_CLIENT_ID=${{ secrets.AZ_CLIENT_ID }}
+  ARM_CLIENT_SECRET=${{ secrets.AZ_CLIENT_SECRET }}
+  ARM_TENANT_ID=${{ secrets.AZ_TENANT_ID }}
+  ARM_SUBSCRIPTION_ID=${{ secrets.AZ_SUB_ID }}
+
+jobs:
+  deploy-resources:
+    runs-on: ubuntu-latest
+    steps:
+      name: Echo
+      run: echo "$ARM_CLIENT_ID"
