@@ -6,6 +6,9 @@ terraform {
     }
   }
 }
+provider "azurerm" {
+  features {}
+}
 resource "azurerm_resource_group" "k8s-native" {
   name     = var.rsg_name
   location = var.location
