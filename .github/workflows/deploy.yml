@@ -15,5 +15,5 @@ jobs:
   deploy-resources:
     runs-on: ubuntu-latest
     steps:
-      name: Echo
-      run: echo "$ARM_CLIENT_ID"
+      - name: Echo
+        run: echo "$ARM_CLIENT_ID"
