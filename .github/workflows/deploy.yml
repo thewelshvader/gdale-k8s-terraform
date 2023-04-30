@@ -6,7 +6,8 @@ on:
       - dev
 
 defaults:
-  working-directory: ./tf
+  run:
+    working-directory: ./tf
 
 env:
   ARM_CLIENT_ID: ${{ secrets.AZ_CLIENT_ID }}
