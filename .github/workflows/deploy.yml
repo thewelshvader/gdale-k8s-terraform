@@ -5,9 +5,9 @@ on:
     branches:
       - dev
 
-# defaults:
-#   run:
-#     working-directory: ./tf
+defaults:
+  run:
+    working-directory: gdale-k8s-terraform/tf
 
 env:
   ARM_CLIENT_ID: ${{ secrets.AZ_CLIENT_ID }}
