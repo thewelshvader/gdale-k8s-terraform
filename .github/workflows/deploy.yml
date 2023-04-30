@@ -5,6 +5,9 @@ on:
     branches:
       - dev
 
+defaults:
+  working-directory: ./tf
+
 env:
   ARM_CLIENT_ID: ${{ secrets.AZ_CLIENT_ID }}
   ARM_CLIENT_SECRET: ${{ secrets.AZ_CLIENT_SECRET }}
@@ -12,7 +15,7 @@ env:
   ARM_SUBSCRIPTION_ID: ${{ secrets.AZ_SUB_ID }}
 
 jobs:
-  deploy-resources:
+  install-terraform:
     runs-on: ubuntu-latest
     steps:
       - name: Install Terraform Pre-requisites
@@ -27,4 +30,6 @@ jobs:
         run: sudo apt-get install terraform
       - name: Check Terraform version
         run: terraform --version
+      - name: Terrform Plan
+        work
 
