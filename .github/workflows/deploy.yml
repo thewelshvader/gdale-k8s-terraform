@@ -25,4 +25,6 @@ jobs:
         run: sudo apt update
       - name: Install Terraform
         run: sudo apt-get install terraform
+      - name: Check Terraform version
+        run: terraform --version
 
