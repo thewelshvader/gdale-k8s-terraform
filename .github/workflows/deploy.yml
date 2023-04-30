@@ -5,9 +5,9 @@ on:
     branches:
       - dev
 
-# defaults:
-#   run:
-#     working-directory: tf
+defaults:
+  run:
+    working-directory: ./tf
 
 env:
   ARM_CLIENT_ID: ${{ secrets.AZ_CLIENT_ID }}
@@ -19,6 +19,10 @@ jobs:
   install-terraform:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout branch
+        uses: actions/checkout@v3
+        with:
+          ref: dev
       - name: ls
         run: ls -l
       - name: Install Terraform Pre-requisites
