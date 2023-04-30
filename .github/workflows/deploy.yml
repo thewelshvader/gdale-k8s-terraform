@@ -16,4 +16,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Echo
-        run: echo "$ARM_CLIENT_ID"
+        run: echo $ARM_CLIENT_ID
