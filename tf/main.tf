@@ -10,6 +10,6 @@ provider "azurerm" {
   features {}
 }
 resource "azurerm_resource_group" "k8s-native" {
-  name     = var.rsg_name
+  name     = "rsg-${var.suffix}"
   location = var.location
 }
