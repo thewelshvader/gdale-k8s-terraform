@@ -39,3 +39,5 @@ jobs:
         run: terraform init
       - name: Terraform Plan
         run: terraform plan
+      - name: Terrform Apply
+        run: terrform apply
