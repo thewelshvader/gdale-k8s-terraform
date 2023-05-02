@@ -33,15 +33,15 @@ resource "random_id" "vm_name_unique" {
   byte_length = 4
 }
 
-resource "azurerm_network_interface" "k8s-native" {
-  count               = var.vm_count
-  name                = element(random_id.vm_name_unique.*.hex, count.index)
-  location            = azurerm_resource_group.k8s-native.location
-  resource_group_name = azurerm_resource_group.k8s-native.name
+# resource "azurerm_network_interface" "k8s-native" {
+#   count               = var.vm_count
+#   name                = element(random_id.vm_name_unique.*.hex, count.index)
+#   location            = azurerm_resource_group.k8s-native.location
+#   resource_group_name = azurerm_resource_group.k8s-native.name
 
-  ip_configuration {
-    name                          = "internal"
-    subnet_id                     = azurerm_virtual_network.k8s-native.subnet.id
-    private_ip_address_allocation = "Dynamic"
-  }
-}
+#   ip_configuration {
+#     name                          = "internal"
+#     subnet_id                     = azurerm_virtual_network.k8s-native.subnet.id
+#     private_ip_address_allocation = "Dynamic"
+#   }
+# }
