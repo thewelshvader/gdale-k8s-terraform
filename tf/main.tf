@@ -42,7 +42,7 @@ resource "azurerm_network_interface" "k8s-native" {
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = azurerm_virtual_network.k8s-native.subnet['id']
+    subnet_id                     = azurerm_virtual_network.k8s-native.subnet["id"]
     private_ip_address_allocation = "Dynamic"
   }
 }
