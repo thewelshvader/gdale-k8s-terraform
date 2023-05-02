@@ -18,6 +18,9 @@ env:
 jobs:
   install-terraform:
     runs-on: ubuntu-latest
+    envs:
+      CI_COMMIT_MESSAGE: Greendale Admin
+      CI_COMMIT_AUTHOR: Greendale Admin
     steps:
       - name: Checkout branch
         uses: actions/checkout@v3
@@ -39,5 +42,12 @@ jobs:
         run: terraform init
       - name: Terraform Plan
         run: terraform plan
-      # - name: Terraform Apply
-      #   run: terraform apply -auto-approve
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
+          git config --global user.email "greendale-admin@users.noreply.github.com"
+          git commit  --allow-empty -a -m "${{ env.CI_COMMIT_MESSAGE }}"
+          git push
