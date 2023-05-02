@@ -1,6 +1,11 @@
+variable "suffix" {
+ type = string
+ default = "k8s-native"
+ description = "Resource Group Name"
+}
 variable "rsg_name" {
  type = string
- default = "gdale-k8s-native"
+ default = "gdale-${var.suffix}"
  description = "Resource Group Name"
 }
 variable "location" {
