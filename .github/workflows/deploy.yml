@@ -18,7 +18,7 @@ env:
 jobs:
   install-terraform:
     runs-on: ubuntu-latest
-    envs:
+    env:
       CI_COMMIT_MESSAGE: Greendale Admin
       CI_COMMIT_AUTHOR: Greendale Admin
     steps:
